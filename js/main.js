@@ -7,9 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuLinks = document.querySelectorAll('[data-goto]');
     let popupOpenBtns = document.querySelectorAll('[data-open-pop]');
     let popups = document.querySelectorAll('[data-pop]');
+    let headerBg = document.querySelector('.header__bg');
+    let popupBgs = document.querySelectorAll('.popup__bg');
 
     function wow() {
-        new WOW().init();
+        wow = new WOW({
+            live: false, // default
+        });
+        wow.init();
     }
 
     function accordion() {
@@ -34,7 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
         burger.addEventListener('click', () => {
             burger.classList.toggle('active');
             menu.classList.toggle('active');
+            headerBg.classList.toggle('active');
             body.classList.toggle('lock');
+        });
+        headerBg.addEventListener('click', () => {
+            burger.classList.remove('active');
+            menu.classList.remove('active');
+            headerBg.classList.remove('active');
+            body.classList.remove('lock');
         });
     }
 
@@ -54,14 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function openPopup() {
-        popupOpenBtns.forEach(btn => {
+        popupOpenBtns.forEach((btn) => {
             btn.addEventListener('click', (e) => {
-                body.classList.add('active');
-                popups.forEach(popup => {
-                    if(popup.dataset.pop == e.target.dataset.openPop) {
-                        
+                body.classList.add('lock');
+                popups.forEach((popup) => {
+                    if (popup.dataset.pop === e.target.dataset.openPop) {
+                        popup.classList.add('active')
                     }
-                })
+                });
+            });
+        });
+        popupBgs.forEach((bg) => {
+            bg.addEventListener('click', (e) => {
+                body.classList.remove('lock');
+                let pop = document.querySelector(`[data-pop="${e.target.dataset.close}"]`)
+                pop.classList.remove('active')
             })
         })
     }
