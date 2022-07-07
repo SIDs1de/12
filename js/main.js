@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         popup.classList.add('active');
                     }
                 });
+                e.preventDefault();
             });
         });
         popupBgs.forEach((bg) => {
