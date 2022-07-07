@@ -96,10 +96,12 @@
                                 работает современный маркетинг и как безошибочно настравивать рекламные кампании
                             </p>
                             <div class="offer__links">
-                                <a class="offer__subscribe-link animate__animated animate__fadeIn wow" data-wow-delay=".6s" href="#">
+                                <a class="offer__subscribe-link animate__animated animate__fadeIn wow"
+                                    data-wow-delay=".6s" href="#" data-open-pop="1">
                                     Оформить подписку
                                 </a>
-                                <a class="offer__more-link animate__animated animate__fadeIn wow" href="#" data-goto=".about" data-wow-delay="1s">
+                                <a class="offer__more-link animate__animated animate__fadeIn wow" href="#"
+                                    data-goto=".about" data-wow-delay="1s">
                                     Узнать подробнее
                                 </a>
                             </div>
@@ -200,7 +202,8 @@
                         Запуск инфопродукта, который&nbsp;принёс <br> <span>25&nbsp;000&nbsp;000&nbsp;руб.</span>
                     </p>
                 </a>
-                <a class="quality__item wow animate__animated animate__fadeInUp quality__item--disabled" href="#" disabled>
+                <a class="quality__item wow animate__animated animate__fadeInUp quality__item--disabled" href="#"
+                    disabled>
                     <picture>
                         <source class="quality__img" srcset="img/quality/5.webp" alt="">
                         <img class="quality__img" src="img/quality/5.jpg" alt="">
@@ -379,10 +382,10 @@
                 <h2 class="title discount__title">
                     Cкидка по&nbsp;промокоду
                 </h2>
-                <form class="discount__form form" action="#" method="post">
-                    <input class="discount__input input" type="text" placeholder="Введите промокод">
+                <form class="discount__form form" action="#" method="post" name="discount-form">
+                    <input class="discount__input input" type="text" placeholder="Введите промокод" name="promo">
                     <div class="discount__btn-wrapper btn-wrapper">
-                        <button class="discount__btn btn" type="submit">
+                        <button class="discount__btn btn" type="submit" name="sub">
                             Начать обучение
                         </button>
                         <a class="discount__link link" href="#">
@@ -476,7 +479,8 @@
                     </div>
                 </div>
                 <div class="questions__item">
-                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="2" data-wow-delay=".1s">
+                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="2"
+                        data-wow-delay=".1s">
                         Можно ли с нуля стать маркетологом по этой программе?
                     </div>
                     <div class="questions__body wow animate__animated animate__fadeInDown" data-tab="2">
@@ -491,7 +495,8 @@
                     </div>
                 </div>
                 <div class="questions__item">
-                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="3" data-wow-delay=".2s">
+                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="3"
+                        data-wow-delay=".2s">
                         Заменит ли подписка полноценное обучение?
                     </div>
                     <div class="questions__body" data-tab="3">
@@ -506,7 +511,8 @@
                     </div>
                 </div>
                 <div class="questions__item">
-                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="4" data-wow-delay=".3s">
+                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="4"
+                        data-wow-delay=".3s">
                         На какой срок я могу оформить подписку?
                     </div>
                     <div class="questions__body" data-tab="4">
@@ -521,7 +527,8 @@
                     </div>
                 </div>
                 <div class="questions__item">
-                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="5" data-wow-delay=".4s">
+                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="5"
+                        data-wow-delay=".4s">
                         Что делать, если я захочу отменить подписку?
                     </div>
                     <div class="questions__body" data-tab="5">
@@ -536,7 +543,8 @@
                     </div>
                 </div>
                 <div class="questions__item">
-                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="6" data-wow-delay=".5s">
+                    <div class="questions__head wow animate__animated animate__fadeInDown" data-tab="6"
+                        data-wow-delay=".5s">
                         Кто будет составлять материалы?
                     </div>
                     <div class="questions__body" data-tab="6">
@@ -560,10 +568,11 @@
                 <h2 class="title special__title wow animate__animated animate__fadeInDown">
                     Специальное предложение
                 </h2>
-                <form class="special__form form" action="#" method="post">
-                    <input class="special__input input wow animate__animated animate__fadeIn" data-wow-delay=".6s" type="text" placeholder="Введите промокод">
+                <form class="special__form form" action="#" method="post" name="special-form">
+                    <input class="special__input input wow animate__animated animate__fadeIn" data-wow-delay=".6s"
+                        type="text" placeholder="Введите промокод" name="promo">
                     <div class="special__btn-wrapper btn-wrapper wow animate__animated animate__fadeIn">
-                        <button class="special__btn btn" type="submit">
+                        <button class="special__btn btn" type="submit" name="sub">
                             Начать обучение
                         </button>
                         <a class="special__link link" href="#">
@@ -624,6 +633,28 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup" data-pop="1">
+        <div class="popup__inner">
+            <h3 class="popup__title">
+                Получить скидку
+            </h3>
+            <form class="popup__form form" action="#" method="post" name="popup-form">
+                <input class="popup__input input" type="text" placeholder="Введите промокод" name="promo">
+                <div class="popup__btn-wrapper btn-wrapper">
+                    <button class="popup__btn btn" type="submit" name="sub">
+                        Отправить
+                    </button>
+                    <a class="popup__link link" href="#">
+                        Купить без промокода
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="popup__bg">
+
+        </div>
+    </div>
 
 
     <script src="js/main.min.js"></script>

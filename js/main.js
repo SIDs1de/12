@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let menu = document.querySelector('.header__menu');
     let body = document.querySelector('.page');
     let menuLinks = document.querySelectorAll('[data-goto]');
+    let popupOpenBtns = document.querySelectorAll('[data-open-pop]');
+    let popups = document.querySelectorAll('[data-pop]');
 
     function wow() {
         new WOW().init();
@@ -51,7 +53,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function openPopup() {
+        popupOpenBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                body.classList.add('active');
+                popups.forEach(popup => {
+                    if(popup.dataset.pop == e.target.dataset.openPop) {
+                        
+                    }
+                })
+            })
+        })
+    }
+
     wow();
+    openPopup();
     navigation();
     burgerMenu();
     accordion();
