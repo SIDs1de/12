@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let popups = document.querySelectorAll('[data-pop]');
     let headerBg = document.querySelector('.header__bg');
     let popupBgs = document.querySelectorAll('.popup__bg');
+    let headerLinks = document.querySelectorAll('.header__link');
 
     function wow() {
         wow = new WOW({
@@ -47,6 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
             menu.classList.remove('active');
             headerBg.classList.remove('active');
             body.classList.remove('lock');
+        });
+        headerLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                menu.classList.remove('active');
+                headerBg.classList.remove('active');
+                body.classList.remove('lock');
+            });
         });
     }
 
