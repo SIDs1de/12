@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body.classList.add('lock');
                 popups.forEach((popup) => {
                     if (popup.dataset.pop === e.target.dataset.openPop) {
-                        popup.classList.add('active')
+                        popup.classList.add('active');
                     }
                 });
             });
@@ -79,10 +79,21 @@ document.addEventListener('DOMContentLoaded', function () {
         popupBgs.forEach((bg) => {
             bg.addEventListener('click', (e) => {
                 body.classList.remove('lock');
-                let pop = document.querySelector(`[data-pop="${e.target.dataset.close}"]`)
-                pop.classList.remove('active')
-            })
-        })
+                let pop = document.querySelector(
+                    `[data-pop="${e.target.dataset.close}"]`
+                );
+                pop.classList.remove('active');
+            });
+        });
+        document.querySelectorAll('[data-close]').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                let pop = document.querySelector(
+                    `[data-pop="${e.target.dataset.close}"]`
+                );
+                pop.classList.remove('active');
+                body.classList.remove('lock');
+            });
+        });
     }
 
     wow();
