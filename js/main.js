@@ -79,7 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.addEventListener('click', (e) => {
                 body.classList.add('lock');
                 popups.forEach((popup) => {
-                    if (popup.dataset.pop === e.target.dataset.openPop) {
+                    console.log(popup.dataset.pop);
+                    console.log(e.target.dataset.openPop);
+                    if (popup.dataset.pop == e.target.dataset.openPop) {
                         popup.classList.add('active');
                     }
                 });
